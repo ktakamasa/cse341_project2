@@ -41,7 +41,12 @@ const createTrip = async (req, res, next) => {
   try {
     const trip = {
       location: req.body.location,
-      date: req.body.date
+      description: req.body.description,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
+      numPeople: req.body.numPeople,
+      totalCost: req.body.cost,
+      activities: req.body.activities
     };
 
     const response = await mongodb

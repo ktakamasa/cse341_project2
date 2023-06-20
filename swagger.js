@@ -5,8 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Trips API'
   },
-  host: 'localhost:3000',
-  //   host: "cse341-planner.onrender.com",
+  host: ['localhost:3000', 'cse341-planner.onrender.com'],
   schemes: ['http', 'https']
 };
 

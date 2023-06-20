@@ -1,0 +1,17 @@
+//LOCALHOST 
+### ALL
+GET http://localhost:3000/trips/
+
+### CREATE Trip
+POST http://localhost:3000/trips/ HTTP/1.1
+Content-Type: application/json
+    
+    {
+        "location": "Portugal",
+        "description": "Trip details to Portugal",
+        "cost": 1000,
+        "startDate": "12/12/12",
+        "endDate": "12/14/12",
+        "numPeople": 2,
+        "activities": ["surfing", "hiking", "eating"]
+    }
