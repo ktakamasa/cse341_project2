@@ -15,3 +15,22 @@ Content-Type: application/json
         "numPeople": 2,
         "activities": ["surfing", "hiking", "eating"]
     }
+
+
+// RENDER DEPOLOYMENT 
+### ALL
+GET https://cse341-planner.onrender.com/trips
+
+### CREATE Trip
+POST https://cse341-planner.onrender.com/trips HTTP/1.1
+Content-Type: application/json
+    
+    {
+        "location": "Dublin",
+        "description": "Trip details to Dublin",
+        "cost": 1000,
+        "startDate": "12/12/12",
+        "endDate": "12/14/12",
+        "numPeople": 2,
+        "activities": ["surfing", "hiking", "eating"]
+    }
