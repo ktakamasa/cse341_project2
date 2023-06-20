@@ -5,13 +5,9 @@
     "description": "Trips API",
     "version": "1.0.0"
   },
-  "host": [
-    "localhost:3000",
-    "cse341-planner.onrender.com"
-  ],
+  "host": "cse341-planner.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {

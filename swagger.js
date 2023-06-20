@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'Trips API'
   },
-  host: ['localhost:3000', 'cse341-planner.onrender.com'],
-  schemes: ['http', 'https']
+  host: 'cse341-planner.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = 'swagger.json';
