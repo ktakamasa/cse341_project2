@@ -61,7 +61,7 @@ const createTrip = async (req, res, next) => {
     } else {
       res
         .status(500)
-        .json(response.error || 'An error occurred! Trip not created!');
+        .json(response.error || 'An error occurred while creating the trip!');
     }
   } catch (err) {
     console.log(err);
@@ -93,7 +93,9 @@ const updateTrip = async (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(204).json(response).send;
     } else {
-      res.status(500).json(response.error || 'An error occurred!');
+      res
+        .status(500)
+        .json(response.error || 'An error occurred while updating the trip!');
     }
   } catch (err) {
     console.log(err);
@@ -115,7 +117,9 @@ const deleteTrip = async (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(response).send;
     } else {
-      res.status(500).json(response.error || 'An error occurred!');
+      res
+        .status(500)
+        .json(response.error || 'An error occurred while deleting the trip!');
     }
   } catch (err) {
     console.log(err);

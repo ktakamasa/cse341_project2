@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const tripsController = require('../controllers/trips');
+const validation = require('../middleware/validate');
 
 // GET all trips
 router.get('/', tripsController.getAllTrips);
@@ -9,10 +10,10 @@ router.get('/', tripsController.getAllTrips);
 router.get('/:id', tripsController.getTripById);
 
 // POST a new trip
-router.post('/', tripsController.createTrip);
+router.post('/', validation.saveTrip, tripsController.createTrip);
 
 // PUT update data in an existing trip
-router.put('/:id', tripsController.updateTrip);
+router.put('/:id', validation.saveTrip, tripsController.updateTrip);
 
 // DELETE a trip
 router.delete('/:id', tripsController.deleteTrip);
