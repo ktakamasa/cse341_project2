@@ -1,5 +1,5 @@
 //LOCALHOST 
-### ALL
+### ALL Trips
 GET http://localhost:3000/trips/
 
 ### CREATE Trip
