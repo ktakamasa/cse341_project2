@@ -11,4 +11,10 @@ router.get('/:id', tripsController.getTripById);
 // POST a new trip
 router.post('/', tripsController.createTrip);
 
+// PUT update data in an existing trip
+router.put('/:id', tripsController.updateTrip);
+
+// DELETE a trip
+router.delete('/:id', tripsController.deleteTrip);
+
 module.exports = router;

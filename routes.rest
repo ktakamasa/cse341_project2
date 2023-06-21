@@ -2,13 +2,16 @@
 ### ALL Trips
 GET http://localhost:3000/trips/
 
+### GET Trip by ID
+GET http://localhost:3000/trips/64922832d504bad7b240a71b
+
 ### CREATE Trip
 POST http://localhost:3000/trips/ HTTP/1.1
 Content-Type: application/json
     
     {
-        "location": "Portugal",
-        "description": "Trip details to Portugal",
+        "location": "Nice",
+        "description": "Trip details to Nice",
         "cost": 1000,
         "startDate": "12/12/12",
         "endDate": "12/14/12",
@@ -16,10 +19,60 @@ Content-Type: application/json
         "activities": ["surfing", "hiking", "eating"]
     }
 
+### PUT Update trip
+PUT http://localhost:3000/trips/64934ff70cdfead6bbd69e27 HTTP/1.1
+Content-Type: application/json
+    
+    {
+        "location": "Nowhere",
+        "description": "Trip details to nowhere",
+        "cost": 1000,
+        "startDate": "12/12/12",
+        "endDate": "12/14/12",
+        "numPeople": 2,
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### DELETE Trip
+DELETE http://localhost:3000/trips/64934ff70cdfead6bbd69e27 HTTP/1.1
+
+### wishlists
+### ALL wishlists
+GET http://localhost:3000/wishlists/
+
+### GET wishlist by ID
+GET http://localhost:3000/wishlists/6492282617962a6de24792c7
+
+### CREATE wishlist
+POST http://localhost:3000/wishlists/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "location": "Portugal",
+        "description": "Trip details to Portugal",
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### PUT Update wishlist
+PUT http://localhost:3000/wishlists/649350470cdfead6bbd69e28 HTTP/1.1
+Content-Type: application/json
+
+    {
+        "location": "Nowhere",
+        "description": "Trip details to nowhere",
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### DELETE wishlist
+DELETE http://localhost:3000/wishlists/6492282617962a6de24792c7 HTTP/1.1
+
 
 // RENDER DEPOLOYMENT 
-### ALL
+### ALL Trips
 GET https://cse341-planner.onrender.com/trips
+
+### GET Trip by ID
+GET https://cse341-planner.onrender.com/trips/64922832d504bad7b240a71b
 
 ### CREATE Trip
 POST https://cse341-planner.onrender.com/trips HTTP/1.1
@@ -34,3 +87,64 @@ Content-Type: application/json
         "numPeople": 2,
         "activities": ["surfing", "hiking", "eating"]
     }
+
+### CREATE Trip
+POST https://cse341-planner.onrender.com/trips/ HTTP/1.1
+Content-Type: application/json
+    
+    {
+        "location": "Portugal",
+        "description": "Trip details to Portugal",
+        "cost": 1000,
+        "startDate": "12/12/12",
+        "endDate": "12/14/12",
+        "numPeople": 2,
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### PUT Update trip
+PUT https://cse341-planner.onrender.com/trips/6492282617962a6de24792c7 HTTP/1.1
+Content-Type: application/json
+    
+    {
+        "location": "Nowhere",
+        "description": "Trip details to nowhere",
+        "cost": 1000,
+        "startDate": "12/12/12",
+        "endDate": "12/14/12",
+        "numPeople": 2,
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### DELETE Trip
+DELETE https://cse341-planner.onrender.com/trips/6492282617962a6de24792c7 HTTP/1.1
+
+### wishlists
+### ALL wishlists
+GET https://cse341-planner.onrender.com/wishlists/
+
+### GET wishlists by ID
+GET https://cse341-planner.onrender.com/wishlists/6492282617962a6de24792c7
+
+### CREATE wishlists
+POST https://cse341-planner.onrender.com/wishlists/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "location": "Portugal",
+        "description": "Trip details to Portugal",
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### PUT Update wishlists
+PUT https://cse341-planner.onrender.com/wishlists/6492282617962a6de24792c7 HTTP/1.1
+Content-Type: application/json
+
+    {
+        "location": "Nowhere",
+        "description": "Trip details to nowhere",
+        "activities": ["surfing", "hiking", "eating"]
+    }
+
+### DELETE wishlists
+DELETE https://cse341-planner.onrender.com/wishlists/6492282617962a6de24792c7 HTTP/1.1
