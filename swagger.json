@@ -5,11 +5,19 @@
     "description": "Trips API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-planner.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http"
+  "tags": [
+    {
+      "name": "Trips",
+      "description": "Operations about trips"
+    },
+    {
+      "name": "Wishlists",
+      "description": "Operations about wishlists"
+    }
   ],
+  "schemes": ["https"],
   "paths": {
     "/api-docs": {
       "get": {
@@ -20,10 +28,9 @@
     },
     "/trips/": {
       "get": {
+        "tags": ["Trips"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -35,10 +42,9 @@
         }
       },
       "post": {
+        "tags": ["Trips"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -83,10 +89,9 @@
     },
     "/trips/{id}": {
       "get": {
+        "tags": ["Trips"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -105,10 +110,9 @@
         }
       },
       "put": {
+        "tags": ["Trips"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -157,10 +161,9 @@
         }
       },
       "delete": {
+        "tags": ["Trips"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -181,10 +184,9 @@
     },
     "/wishlists/": {
       "get": {
+        "tags": ["Wishlists"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -196,10 +198,9 @@
         }
       },
       "post": {
+        "tags": ["Wishlists"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -232,10 +233,9 @@
     },
     "/wishlists/{id}": {
       "get": {
+        "tags": ["Wishlists"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -254,10 +254,9 @@
         }
       },
       "put": {
+        "tags": ["Wishlists"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -294,10 +293,9 @@
         }
       },
       "delete": {
+        "tags": ["Wishlists"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",

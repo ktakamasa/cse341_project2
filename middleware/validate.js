@@ -8,7 +8,7 @@ const saveTrip = (req, res, next) => {
     endDate: 'required|string',
     numPeople: 'required|integer',
     totalCost: 'required|integer',
-    activities: ['string']
+    activities: []
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -27,7 +27,7 @@ const saveWishlist = (req, res, next) => {
   const validationRule = {
     location: 'required|string',
     description: 'required|string',
-    activities: ['string']
+    activities: []
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
