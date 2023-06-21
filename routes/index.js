@@ -9,7 +9,4 @@ router.use('/trips', require('./trips'));
 // Use wishlists
 router.use('/wishlists', require('./wishlists'));
 
-// Use accounts
-router.use('/accounts', require('./accounts'));
-
 module.exports = router;
