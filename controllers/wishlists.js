@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 // get all wishlists from database
-const getAllWishlists = async (req, res, next) => {
+const getAllWishlists = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
@@ -19,7 +19,7 @@ const getAllWishlists = async (req, res, next) => {
 };
 
 // get a single wishlists from database
-const getWishlistById = async (req, res, next) => {
+const getWishlistById = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid wishlist id to find a wishlist.');
@@ -40,7 +40,7 @@ const getWishlistById = async (req, res, next) => {
 };
 
 // create new wishlist
-const createWishlist = async (req, res, next) => {
+const createWishlist = async (req, res) => {
   try {
     const wishlists = {
       location: req.body.location,
@@ -69,7 +69,7 @@ const createWishlist = async (req, res, next) => {
 };
 
 // update wishlist by id in the database
-const updateWishlist = async (req, res, next) => {
+const updateWishlist = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res
@@ -102,7 +102,7 @@ const updateWishlist = async (req, res, next) => {
 };
 
 // delete contact by id in the database
-const deleteWishlist = async (req, res, next) => {
+const deleteWishlist = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res

@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 // get all trips from database
-const getAllTrips = async (req, res, next) => {
+const getAllTrips = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
@@ -19,7 +19,7 @@ const getAllTrips = async (req, res, next) => {
 };
 
 // get a single trip from database
-const getTripById = async (req, res, next) => {
+const getTripById = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid trip id to find a trip.');
@@ -40,7 +40,7 @@ const getTripById = async (req, res, next) => {
 };
 
 // create new trip
-const createTrip = async (req, res, next) => {
+const createTrip = async (req, res) => {
   try {
     const trip = {
       location: req.body.location,
@@ -73,7 +73,7 @@ const createTrip = async (req, res, next) => {
 };
 
 // update trip by id in the database
-const updateTrip = async (req, res, next) => {
+const updateTrip = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid trip id to update a trip.');
@@ -110,7 +110,7 @@ const updateTrip = async (req, res, next) => {
 };
 
 // delete contact by id in the database
-const deleteTrip = async (req, res, next) => {
+const deleteTrip = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid trip id to delete a trip.');
