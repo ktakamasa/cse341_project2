@@ -11,10 +11,20 @@ router.get('/', tripsController.getAllTrips);
 router.get('/:id', tripsController.getTripById);
 
 // POST a new trip
-router.post('/', requiresAuth(), validation.saveTrip, tripsController.createTrip);
+router.post(
+  '/',
+  requiresAuth(),
+  validation.saveTrip,
+  tripsController.createTrip
+);
 
 // PUT update data in an existing trip
-router.put('/:id', requiresAuth(), validation.saveTrip, tripsController.updateTrip);
+router.put(
+  '/:id',
+  requiresAuth(),
+  validation.saveTrip,
+  tripsController.updateTrip
+);
 
 // DELETE a trip
 router.delete('/:id', requiresAuth(), tripsController.deleteTrip);
