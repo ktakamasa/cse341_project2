@@ -21,7 +21,7 @@ const getAllTrips = async (req, res) => {
 // get a single trip from database
 const getTripById = async (req, res) => {
   try {
-    if (!ObjectId.isValid(req.params.id) || req.params.id === undefined) {
+    if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid trip id to find a trip.');
     }
     const tripId = new ObjectId(req.params.id);
