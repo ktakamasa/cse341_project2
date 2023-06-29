@@ -10,7 +10,15 @@ const config = {
   issuerBaseURL: process.env.ISSUER_BASE_URL
 };
 
-module.exports = { config };
+
+const isAuthenticated = (req, res, next) => {
+  if (req.user === undefined) { 
+    return res.status(401).json({ error: 'User not authenticated' });
+  }
+  next();
+};
+
+module.exports = { config, isAuthenticated };
 
 // // auth router attaches /login, /logout, and /callback routes to the baseURL
 // app.use(auth(config));

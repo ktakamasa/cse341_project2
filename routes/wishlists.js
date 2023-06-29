@@ -3,6 +3,7 @@ const router = express.Router();
 const wishlistsController = require('../controllers/wishlists');
 const validation = require('../middleware/validate');
 const { requiresAuth } = require('express-openid-connect');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 // GET all wishlists
 router.get('/', wishlistsController.getAllWishlists);
@@ -14,6 +15,7 @@ router.get('/:id', wishlistsController.getWishlistById);
 router.post(
   '/',
   requiresAuth(),
+  isAuthenticated,
   validation.saveWishlist,
   wishlistsController.createWishlist
 );
@@ -22,11 +24,17 @@ router.post(
 router.put(
   '/:id',
   requiresAuth(),
+  isAuthenticated,
   validation.saveWishlist,
   wishlistsController.updateWishlist
 );
 
 // DELETE a wishlist
-router.delete('/:id', requiresAuth(), wishlistsController.deleteWishlist);
+router.delete(
+  '/:id',
+  requiresAuth(),
+  isAuthenticated,
+  wishlistsController.deleteWishlist
+);
 
 module.exports = router;

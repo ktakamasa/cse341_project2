@@ -3,6 +3,7 @@ const router = express.Router();
 const tripsController = require('../controllers/trips');
 const validation = require('../middleware/validate');
 const { requiresAuth } = require('express-openid-connect');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 // GET all trips
 router.get('/', tripsController.getAllTrips);
@@ -14,6 +15,7 @@ router.get('/:id', tripsController.getTripById);
 router.post(
   '/',
   requiresAuth(),
+  isAuthenticated,
   validation.saveTrip,
   tripsController.createTrip
 );
@@ -22,11 +24,17 @@ router.post(
 router.put(
   '/:id',
   requiresAuth(),
+  isAuthenticated,
   validation.saveTrip,
   tripsController.updateTrip
 );
 
 // DELETE a trip
-router.delete('/:id', requiresAuth(), tripsController.deleteTrip);
+router.delete(
+  '/:id',
+  requiresAuth(),
+  isAuthenticated,
+  tripsController.deleteTrip
+);
 
 module.exports = router;
